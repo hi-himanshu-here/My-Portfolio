@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/e1fd59d75c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/logo.png" class="logo">
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fas fa-times" onclick="closemenu()"></i>
+            </ul>
+            <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>Web Developer and Competitive Programmer</p>
+            <h1>Hi, I'm <span>Himanshu</span><br>Tiwari</h1>
+        </div>
+    </div>
+</div>
+<!-- -----------about---------- -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/Photo2.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>Hey there! I'm currently a physics student at the Indian Institute of Technology (ISM) Dhanbad. I have a deep love for physics, coding, and web development. Beyond academics, I've been traveling the world since I was young, soaking in different cultures and experiences. Whether I'm diving into complex equations, building cool web projects, or exploring a new city, I'm always on the lookout for my next adventure.</p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Languages</span><br>C++, C, HTML, JavaScript, Python</li>
+                        <li><span>Technologies</span><br>MERN Stack</li>
+                        <li><span>Web Development</span><br>Full Stack Web Development</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2022 - 2026</span><br>Indian Institute of Technology (ISM) Dhanbad</li>
+                        <li><span>2018 - 2022</span><br>Navrachana International School, Vadodara</li>
+                        <li><span>2014 - 2018</span><br>Premier Academy, Nairobi</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ----------projects------------ -->
+<div id="projects">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/youtubeicon.png">
+                <div class="layer">
+                    <h3>Video Streaming App</h3>
+                    <p>This is a clone of a very popular streaming app. Click on the link below to see it.</p>
+                    <a href="https://github.com/hi-himanshu-here/Youtube-Clone"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/amazon.png">
+                <div class="layer">
+                    <h3>E-commerce Website</h3>
+                    <p>This is a clone of a very popular e-commerce website used by millions of people across the globe. Click the link below to find out.</p>
+                    <a href="https://github.com/hi-himanshu-here/Amazon-Clone"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-1.png">
+                <div class="layer">
+                    <h3> Interactive game</h3>
+                    <p>The app connects you yo the talented people around the world. Download it from play store.</p>
+                    <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="https://github.com/hi-himanshu-here" class="btn">See more</a>
+    </div>
+</div>
+<!-- ----------contact------------- -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fas fa-paper-plane"></i> himanshu.official765@gmail.com</p>
+                <p><i class="fas fa-phone-square-alt"></i> +91 9104271210</p>
+                <div class="social-icons">
+
+                    <a href="https://www.linkedin.com/in/himanshutiwari2005"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/hi-himanshu-here"><i class="fa-brands fa-github"></i></a>
+
+                </div>
+                <a href="images/OnCampus Resume.pdf" download class="btn btn2">Download Resume</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright © Himanshu.</p>
+    </div>
+</div>
+
+
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+
+<script>
+
+    var sidemeu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemeu.style.right = "0";
+    }
+    function closemenu(){
+        sidemeu.style.right = "-200px";
+    }
+
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxtKpMueSd4zZVbXlLXW6Su6MQclCiqrIFVSXsTuvdjxIwP8BPL5ZVDk3QYzaSNGIxJ/exec' // add your own app script link here
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
